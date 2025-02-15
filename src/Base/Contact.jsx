@@ -52,9 +52,6 @@ function ContactForm() {
 
     notifyOk();
   };
-  const handleClick = () => {
-    navigate("/");
-  };
 
   return (
     <div>

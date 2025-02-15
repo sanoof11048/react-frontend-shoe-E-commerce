@@ -51,8 +51,9 @@ function Login() {
             initialValues={initialValues}
             onSubmit={(values, { setSubmitting }) => {
               axios
-                .get("http://localhost:3000/users")
+                .get("https://sanoof11048.github.io/host_json_api_ecommerce/users.json")
                 .then((res) => {
+                  console.log(res)
                   const adminData = res.data.find(
                     (user) =>
                       values.email === user.email &&

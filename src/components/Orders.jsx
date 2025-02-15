@@ -11,13 +11,6 @@ function Orders() {
       console.log(user.orders)
       setProducts(user.orders);
     }
-    
-
-
-
-    // const orderedProducts = [...products, orders];
-    // setProducts(orderedProducts);
-    // console.log(products);
   }, [user]);
 
   const handleRemove = (productId) => {

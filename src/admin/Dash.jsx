@@ -22,7 +22,7 @@ function Dash() {
         .then((res) => {
           const users = res.data;
           const count = users.length;
-          setUserData(count - 1);
+          setUserData(count - 1)
           let orderCount=0
           users.map(
             (user) => orderCount += user.orders.length
@@ -31,12 +31,9 @@ function Dash() {
           let revenue = 0
           users.map((user)=> {
             user.orders.map((order) => {
-              // if (order.price) {
               console.log(order.price)
                revenue= revenue + order.price;
-              // }
             });
-            // return totalRevenue;
             setRevenueData(revenue);
           })
           

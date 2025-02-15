@@ -56,7 +56,7 @@ function Products() {
   const addToCart = (product) => {
     if (user) {
       const userId = user.id;
-      const isProductInCart = user.cart.some(
+      const isProductInCart = cart.some(
         (cartItem) => cartItem.id === product.id
       );
       if (!isProductInCart) {

@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [amount, setAmount] = useState(0);
   const [orders, setOrders] = useState([]);
-  const [curOrders, setCurOrders]= useState([])
+  const [curOrders, setCurOrders] = useState([]);
 
   useEffect(() => {
     const userId = localStorage.getItem("id");
@@ -19,8 +19,7 @@ export const UserProvider = ({ children }) => {
         console.log(res.data);
 
         setUser(res.data);
-        setCurOrders(res.data.orders)
-
+        setCurOrders(res.data.orders);
       });
     }
   }, []);
@@ -28,31 +27,24 @@ export const UserProvider = ({ children }) => {
   const priceHandle = (amountc) => {
     setAmount(amountc);
   };
-  const handleOrders = () => {
-    console.log("sanoof");
-  };
   const toPurchase = (userCart) => {
-    console.log(userCart)
-    setOrders(userCart)
+    console.log(userCart);
+    setOrders(userCart);
   };
 
-  const confirmOrder=async ()=>{
+  const confirmOrder = async () => {
     const userId = localStorage.getItem("id");
-   if(userId){
-    const updatedOrders=[...curOrders,...orders]
+    if (userId) {
+      const updatedOrders = [...curOrders, ...orders];
 
-    await axios.patch(`http://localhost:3000/users/${userId}`, {orders :updatedOrders})
-    await axios.patch(`http://localhost:3000/users/${userId}`, {cart :[]})
-
-
-   }else{
-    toast.error("Network Error")
-   }
-
-
-  }
-; 
-
+      await axios.patch(`http://localhost:3000/users/${userId}`, {
+        orders: updatedOrders,
+      } );
+      await axios.patch(`http://localhost:3000/users/${userId}`, { cart: [] });
+    } else {
+      toast.error("Network Error");
+    }
+  };
   return (
     <UserContext.Provider
       value={{
@@ -60,7 +52,6 @@ export const UserProvider = ({ children }) => {
         user,
         priceHandle,
         amount,
-        handleOrders,
         orders,
         toPurchase,
         confirmOrder,

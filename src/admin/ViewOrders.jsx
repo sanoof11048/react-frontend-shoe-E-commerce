@@ -80,7 +80,7 @@ function ViewOrders() {
                 {user.orders.map((order) => (
                   <li
                     key={order.id}
-                    className="flex justify-center  items-center py-3"
+                    className="flex justify-center   items-center py-3"
                   >
                     <div className="flex flex-col md:flex-row items-center md:w-fit w-5/6 pb-3  md:pb-2 md:pt-2 bg-[#fafafa] rounded-2xl ps-10 pe-10">
                       <img

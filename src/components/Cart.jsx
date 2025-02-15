@@ -166,7 +166,6 @@ function Cart() {
                 className="text-black"
                 onClick={() =>{
                   navigate("/payment")
-                  // handleOrders(userCart)
                   toPurchase(userCart)
                 } }
               >

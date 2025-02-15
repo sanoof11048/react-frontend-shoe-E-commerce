@@ -131,7 +131,6 @@ if(!user || user.id!=="1360"){
           <SideDash />
         </div>
 
-        {/* Main Content */}
         <div className="flex-1 p-6 bg-gray-300">
           <h1 className="text-3xl font-bold mb-6 text-center">Users List</h1>
 

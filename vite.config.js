@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import UnoCSS from 'unocss/vite';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    UnoCSS(), // Add UnoCSS plugin here
-  ],
-});
+  plugins: [react()],
+  server:{
+    port:5000
+  }
+})

@@ -19,9 +19,9 @@ const initialValues = {
 };
 
 const SignUp = () => {
-  const notifySuccess = () => toast("SignUp Completed");
-  const notifyError = () => toast("SignUp Completed Not");
-  const notiftySame = ()=> toast("User Already Exist")
+  const notifySuccess = () => toast.success("SignUp Completed");
+  const notifyError = () => toast.error("SignUp Completed Not");
+  const notiftySame = ()=> toast.error("User Already Exist")
 
   const navigate = useNavigate();
 
@@ -88,9 +88,6 @@ const SignUp = () => {
               <Form>
                 <div className="grid grid-cols-1 gap-4">
                   <div>
-                    {/* <label className="text-sm font-medium text-gray-700">
-                      Name
-                    </label> */}
                     <Field
                       placeholder="Enter your username"
                       className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-0"
@@ -102,9 +99,8 @@ const SignUp = () => {
                   </div>
 
                   <div>
-                    {/* <label className=" text-sm font-medium text-gray-700">
-                      Email
-                    </label> */}
+                   
+              
                     <Field
                     placeholder="Enter Email Address"
                       className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-0"
@@ -115,9 +111,7 @@ const SignUp = () => {
                   </div>
 
                   <div>
-                    {/* <label className=" text-sm font-medium text-gray-700">
-                      Secure With Password
-                    </label> */}
+                   
                     <Field
                     placeholder="Password"
                       className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-0"
