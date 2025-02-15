@@ -1,52 +1,23 @@
+import { useState } from "react";
+import "virtual:uno.css";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/Login";
-import Home from "./components/Home";
-import SignUp from "./components/SignUp";
-import Products from "./components/Products";
-import { ProductProvider } from "./components/ProductContext";
-import Cart from "./components/Cart";
-import Contact from "./Base/Contact";
-import Orders from "./components/Orders";
-import Payment from "./components/Payment";
-import Credits from "./Base/Credits";
-import { UserProvider } from "./components/userContext";
-import { Toaster } from "react-hot-toast";
-import Dash from "./admin/Dash";
-import UserDetails from "./admin/UserDetails";
-import EditProducts from "./admin/EditProducts";
-import ViewOrders from "./admin/ViewOrders";
-import SideDash from "./admin/SideDash";
-import { AnimatePresence } from "framer-motion";
-import AddProduct from "./admin/AddProduct";
+import Home from "./pages/Home";
+import Science from "./pages/streams/Science";
+import Commerce from "./pages/streams/Commerce";
+import Humanities from "./pages/streams/Humanities";
+import { BrowserRouter as Router,  Route, Routes } from "react-router-dom";
+import { CourseProvider } from "./components/Context/courseData";
 
 function App() {
   return (
-    <AnimatePresence exitBeforeEnter>
-    <UserProvider>
-      <ProductProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/credit" element={<Credits />} />
-          <Route path="/dash" element={<Dash />} />
-          <Route path="/sideDash" element={<SideDash/>}/>
-          <Route path="/userDetails" element={<UserDetails/>}/>
-          <Route path="/viewOrders" element={<ViewOrders/>}/>
-          <Route path="/editProducts" element={<EditProducts/>}/>
-          <Route path="/addProducts" element={<AddProduct/>}/>
-
-        </Routes>
-        <Toaster position="bottom-center" reverseOrder={false} />
-      </ProductProvider>
-    </UserProvider>
-    </AnimatePresence>
+    <CourseProvider>
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/science" element={<Science />} />
+    <Route path="/commerce" element={<Commerce />} />
+    <Route path="/humanities" element={<Humanities />} />
+  </Routes>
+    </CourseProvider>
   );
 }
 
