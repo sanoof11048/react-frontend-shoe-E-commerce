@@ -19,6 +19,8 @@ import ViewOrders from "./admin/ViewOrders";
 import SideDash from "./admin/SideDash";
 import { AnimatePresence } from "framer-motion";
 import AddProduct from "./admin/AddProduct";
+import LoginSignup from "./components/Auth/LoginSignup";
+// import Auth from "./components/Auth";
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orders" element={<Orders />} />
@@ -41,9 +43,11 @@ function App() {
           <Route path="/viewOrders" element={<ViewOrders/>}/>
           <Route path="/editProducts" element={<EditProducts/>}/>
           <Route path="/addProducts" element={<AddProduct/>}/>
+          <Route path="/login" element={<LoginSignup/>}/>
+          {/* <Route path="/auth" element={<Auth/>}/> */}
 
         </Routes>
-        <Toaster position="bottom-center" reverseOrder={false} />
+        <Toaster position="top-center" reverseOrder={false} />
       </ProductProvider>
     </UserProvider>
     </AnimatePresence>
